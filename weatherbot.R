@@ -86,23 +86,28 @@ return_text
 
 
 
-
+#retrieves the most recent mention from @weatherbot96
 get_mention = mentions(n=1)
-get_mention
+#get_mention
 
+#converts status class to a data frame
 get_mention_df <- twListToDF(get_mention)
-View(get_mention_df)
+#View(get_mention_df)
 
+#stores text of mentioned tweet
 mention_text <- get_mention_df$text
 
+#gets rid of "@weatherbot96" from tweet text
 mention_text_2 <- gsub('@weatherbot96','',mention_text)
 
+#queries google API for location data
 google_query <- sprintf("https://maps.googleapis.com/maps/api/geocode/json?address=%s&key=%s", mention_text_2, google_apikey)
+#gets rid of white space, for some reason the query doesn't work when the URL has spaces
 google_query <- gsub(" ", "", google_query)
 
-google_query
+#google_query
 
-#stores info
+#stores info in address_info
 address_info <- GET(google_query)
 address_info_2 <- fromJSON(content(address_info, as = "text"))
 
