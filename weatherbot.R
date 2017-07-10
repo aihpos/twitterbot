@@ -63,14 +63,9 @@ tweet(return_text)
 
 
 
-google_url <- "https://maps.googleapis.com/maps/api/geocode/json?latlng="
-latlng <- "30.2672,-97.7431"
 google_apikey <- "AIzaSyAjGD4iWBnYMqfiDt6Cf3RnPNBq-5IM8YA"
-google_total <- sprintf("%s%s&key=%s", google_url, latlng, google_apikey)
 
-#stores info
-addressinfo <- GET(google_total)
-addressinfo2 <- fromJSON(content(addressinfo, as = "text"))
+
 
 #returns address of the location that user dm'ed
 dm_address <- addressinfo2$results$formatted_address[5]
@@ -88,4 +83,34 @@ daily_summary <- tolower(weatherinfo2$hourly$summary)
 
 return_text = sprintf("It's currently %s and %g degrees F in %s", temp_summary, temperature, dm_address)
 return_text
+
+
+
+
+get_mention = mentions(n=1)
+get_mention
+
+get_mention_df <- twListToDF(get_mention)
+View(get_mention_df)
+
+mention_text <- get_mention_df$text
+
+mention_text_2 <- gsub('@weatherbot96','',mention_text)
+
+google_query <- sprintf("https://maps.googleapis.com/maps/api/geocode/json?address=%s&key=%s", mention_text_2, google_apikey)
+google_query <- gsub(" ", "", google_query)
+
+google_query
+
+#stores info
+address_info <- GET(google_query)
+address_info_2 <- fromJSON(content(address_info, as = "text"))
+
+
+
+
+
+
+
+
 
