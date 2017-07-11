@@ -4,7 +4,6 @@
 
 library(rvest)
 library(magrittr)
-library(ggplot2)
 library(readr)
 library(twitteR)
 library(httr)
