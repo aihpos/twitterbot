@@ -87,7 +87,7 @@ daily_summary <- tolower(weatherinfo2$hourly$summary)
 
 #string that we want to tweet
 
-return_text = sprintf("Hi %s, weather for %s: It is currently %s and %g degrees F. Will be %s", username, userplace, temp_summary, temperature, daily_summary)
+return_text = sprintf("Hi @%s, weather for %s: It is currently %s and %g degrees F. Will be %s", username, userplace, temp_summary, temperature, daily_summary)
 
 #tweets the weather information 
 tweet(return_text)
