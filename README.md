@@ -14,4 +14,4 @@ Twitter API
 
 ## Contributors
 
-Judy Hong [Github] (https://github.com/judyh97) // Ollie Gnodde [Github] (https://github.com/Ollie-gnodde) // Sophia Dong [Github] (https://github.com/aihpos)
+Judy Hong ([Github](https://github.com/judyh97)) // Ollie Gnodde ([Github](https://github.com/Ollie-gnodde)) // Sophia Dong ([Github](https://github.com/aihpos))
