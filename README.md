@@ -1,10 +1,10 @@
 ## Synopsis
 
-This project is atwitter bot created using rstudio. When the twitter handle is mentioned in conjuncton with a geographic location, it returns the current weather of that location using the DarkSky API.
+This project is a twitter bot created using rstudio. When the twitter handle is mentioned in conjuncton with a geographic location, it returns the current weather of that location using the DarkSky API.
 
 ## Method
 
-The twitterbot checks the twitter mentions of its handle @weatherbot96 every minute via the twitteR package and checks if there are any new mentions. If there is, searches the text as a location in the Google Geocode API to find current weather information. The twitterbot responds to the user with current weather conditions for the location tweeted.
+The twitterbot checks the twitter mentions of its handle @weatherbot96 every minute via the twitteR package and checks if there are any new mentions. If there is, searches the text as a location in the Google Geocode API to find current weather information. The twitterbot responds to the user with current weather conditions for the location tweeted. Implemented on an AWS EC2 instance.
 
 ## API Reference
 
